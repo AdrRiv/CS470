@@ -1,0 +1,16 @@
+CC = gcc
+
+CFLAGS = -Wall -g
+
+TARGET = proc_manag
+
+all: $(TARGET)
+
+$(TARGET): $(TARGET).c
+	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c
+
+run: all
+	./$(TARGET)
+
+clean:
+	rm -f $(TARGET)
