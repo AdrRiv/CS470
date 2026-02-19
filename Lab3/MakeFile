@@ -1,0 +1,17 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -g
+
+
+myshell: myshell.o
+	$(CC) $(CFLAGS) -o myshell myshell.o
+
+myshell.o: myshell.c
+	$(CC) $(CFLAGS) -c myshell.c
+
+run: myshell
+	./myshell
+
+clean:
+	rm -f *.o myshell
+
+.PHONY: clean run
