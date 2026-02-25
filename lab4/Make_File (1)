@@ -1,0 +1,22 @@
+CC = gcc
+
+CFLAGS = -Wall -Wextra
+
+all: sjf rr
+
+sjf: sjf.c process_util.o
+	$(CC) $(CFLAGS) sjf.c process_util.o -o sjf
+
+rr: rr.c process_util.o
+	$(CC) $(CFLAGS) rr.c process_util.o -o rr
+
+process_util.o: process_util.c
+	$(CC) $(CFLAGS) -c process_util.c process_util.h
+
+run: all
+	./sjf
+	./rr
+
+clean: rm -f sjf rr
+
+.PHONY: all run clean 
