@@ -1,0 +1,10 @@
+all: paging
+
+paging: paging.c
+	gcc -Wall paging.c -o paging
+
+run: paging
+	./paging
+
+clean:
+	rm -f paging
